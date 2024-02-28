@@ -15,7 +15,7 @@ license="MIT"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="sinsei_wonderland_mod" #mandatory
+modId="wonderland_mod_id" #mandatory
 # The version number of the mod
 version="0.0.1-1.20.1" #mandatory
 # A display name for the mod
@@ -41,7 +41,7 @@ authors="Sinsei" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''Experience a wonderland based on Alice in Wonderland. Made by Sinsei.'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.sinsei_wonderland_mod]] #optional
+[[dependencies.wonderland_mod_id]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -55,7 +55,7 @@ description='''Experience a wonderland based on Alice in Wonderland. Made by Sin
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.sinsei_wonderland_mod]]
+[[dependencies.wonderland_mod_id]]
     modId="minecraft"
     mandatory=true
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
@@ -66,5 +66,5 @@ description='''Experience a wonderland based on Alice in Wonderland. Made by Sin
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.
-#[features.sinsei_wonderland_mod]
+#[features.wonderland_mod_id]
 #openGLVersion="[3.2,)"
