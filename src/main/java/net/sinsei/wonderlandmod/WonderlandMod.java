@@ -14,6 +14,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 import net.sinsei.wonderlandmod.item.ModCreativeModTabs;
 import net.sinsei.wonderlandmod.item.ModItems;
 import org.slf4j.Logger;
@@ -33,6 +34,7 @@ public class WonderlandMod
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -56,8 +58,12 @@ public class WonderlandMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
         {
-            event.accept(ModItems.CAKE_SEEDS);
-            event.accept((ModItems.LOLLY));
+            event.accept(ModItems.BLOCK_CHANGE_ITEM);
+            event.accept(ModItems.CAKE_SEEDS_ITEM);
+            event.accept(ModItems.CHOCOLATE_ITEM);
+            event.accept(ModItems.LOLLY_ITEM);
+
+            event.accept(ModBlocks.CHOCOLATE_BLOCK);
         }
     }
 

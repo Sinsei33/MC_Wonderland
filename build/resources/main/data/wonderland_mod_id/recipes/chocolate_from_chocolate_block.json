@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wonderland_mod_id:chocolate_block"
+    }
+  ],
+  "result": {
+    "item": "wonderland_mod_id:chocolate_item",
+    "count": 4
+  }
+}

@@ -1,6 +1,10 @@
 {
-  "item.wonderland_mod_id.cake_seeds": "Cake Seeds",
-  "item.wonderland_mod_id.lolly": "Lollypop",
+  "item.wonderland_mod_id.block_change_item": "Block-Changer",
+  "item.wonderland_mod_id.cake_seeds_item": "Cake Seeds",
+  "item.wonderland_mod_id.chocolate_item": "Chocolate",
+  "item.wonderland_mod_id.lolly_item": "Lollypop",
+
+  "block.wonderland_mod_id.chocolate_block": "Chocolate Block",
 
   "creativetab.wonderland_tab": "Wonderland"
 }
