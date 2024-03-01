@@ -1,9 +1,15 @@
 {
-  "item.wonderland_mod_id.block_change_item": "Block-Changer",
+  "item.wonderland_mod_id.block_change_item": "Block-Changer Item",
   "item.wonderland_mod_id.cake_seeds_item": "Cake Seeds",
   "item.wonderland_mod_id.chocolate_item": "Chocolate",
   "item.wonderland_mod_id.lolly_item": "Lollypop",
 
+
+
+  "block.wonderland_mod_id.attached_cake_crop_stem": "Attached Cake Stem",
+  "block.wonderland_mod_id.block_change_block": "Block-Changer Block",
+  "block.wonderland_mod_id.cake_crop_block": "Cake",
+  "block.wonderland_mod_id.cake_crop_stem": "Cake Stem",
   "block.wonderland_mod_id.chocolate_block": "Chocolate Block",
 
   "creativetab.wonderland_tab": "Wonderland"

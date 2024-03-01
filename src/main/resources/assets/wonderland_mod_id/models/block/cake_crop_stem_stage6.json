@@ -1,0 +1,6 @@
+{
+  "parent": "wonderland_mod_id:block/cake_crop_stem_growth6",
+  "textures": {
+    "stem": "wonderland_mod_id:block/cake_crop_stem"
+  }
+}

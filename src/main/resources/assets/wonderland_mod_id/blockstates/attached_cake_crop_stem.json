@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "wonderland_mod_id:block/attached_cake_crop_stem",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "wonderland_mod_id:block/attached_cake_crop_stem",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "wonderland_mod_id:block/attached_cake_crop_stem",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "wonderland_mod_id:block/attached_cake_crop_stem"
+    }
+  }
+}

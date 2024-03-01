@@ -1,0 +1,7 @@
+{
+  "parent": "wonderland_mod_id:block/cake_crop_stem_fruit",
+  "textures": {
+    "stem": "wonderland_mod_id:block/cake_crop_stem",
+    "upperstem": "wonderland_mod_id:block/attached_cake_crop_stem"
+  }
+}

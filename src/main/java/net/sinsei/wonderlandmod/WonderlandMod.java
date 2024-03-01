@@ -63,6 +63,8 @@ public class WonderlandMod
             event.accept(ModItems.CHOCOLATE_ITEM);
             event.accept(ModItems.LOLLY_ITEM);
 
+            event.accept(ModBlocks.BLOCK_CHANGE_BLOCK);
+            event.accept(ModBlocks.CAKE_CROP_BLOCK);
             event.accept(ModBlocks.CHOCOLATE_BLOCK);
         }
     }
