@@ -27,6 +27,7 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 
 public class CakeCropBlock extends StemGrownBlock {
     public static final int MAX_BITES = 6;
@@ -42,11 +43,11 @@ public class CakeCropBlock extends StemGrownBlock {
     }
 
     public StemBlock getStem() {
-        return (StemBlock)Blocks.MELON_STEM;
+        return (StemBlock) ModBlocks.CAKE_CROP_STEM.get();
     }
 
     public AttachedStemBlock getAttachedStem() {
-        return (AttachedStemBlock)Blocks.ATTACHED_MELON_STEM;
+        return (AttachedStemBlock)ModBlocks.ATTACHED_CAKE_CROP_STEM.get();
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {

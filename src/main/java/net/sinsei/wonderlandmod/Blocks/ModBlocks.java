@@ -31,11 +31,11 @@ public class ModBlocks
     public static final RegistryObject<Block> ATTACHED_CAKE_CROP_STEM = registerBlock("attached_cake_crop_stem",
             () -> new AttachedStemBlock((StemGrownBlock) CAKE_CROP_BLOCK.get(),
                     ModItems.CAKE_SEEDS_ITEM,
-                    BlockBehaviour.Properties.copy(Blocks.ATTACHED_MELON_STEM)));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> CAKE_CROP_STEM = registerBlock("cake_crop_stem",
             () -> new StemBlock((StemGrownBlock) CAKE_CROP_BLOCK.get(),
                     ModItems.CAKE_SEEDS_ITEM,
-                    BlockBehaviour.Properties.copy(Blocks.MELON_STEM)));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP).pushReaction(PushReaction.DESTROY)));
 
 
     public static final RegistryObject<Block> CHOCOLATE_BLOCK = registerBlock("chocolate_block",
