@@ -187,5 +187,47 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/smoker": {
+    "criteria": {
+      "has_furnace": "2024-03-04 11:19:04 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_ingot_from_smelting_iron_ore": {
+    "criteria": {
+      "has_iron_ore": "2024-03-04 11:19:11 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_ingot_from_blasting_iron_ore": {
+    "criteria": {
+      "has_iron_ore": "2024-03-04 11:19:11 +0100"
+    },
+    "done": true
+  },
+  "wonderland_mod_id:recipes/misc/chocolate_item_from_smelting_chocolate_item": {
+    "criteria": {
+      "has_chocolate_item": "2024-03-04 16:12:25 +0100"
+    },
+    "done": true
+  },
+  "wonderland_mod_id:recipes/misc/chocolate_item": {
+    "criteria": {
+      "has_chocolate_block": "2024-03-04 16:10:59 +0100"
+    },
+    "done": true
+  },
+  "wonderland_mod_id:recipes/misc/chocolate_block": {
+    "criteria": {
+      "has_chocolate_item": "2024-03-04 16:12:25 +0100"
+    },
+    "done": true
+  },
+  "wonderland_mod_id:recipes/misc/chocolate_item_from_blasting_chocolate_item": {
+    "criteria": {
+      "has_chocolate_item": "2024-03-04 16:12:25 +0100"
+    },
+    "done": true
+  },
   "DataVersion": 3465
 }

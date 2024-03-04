@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "chocolate",
+  "ingredient": {
+    "item": "wonderland_mod_id:chocolate_item"
+  },
+  "result": "wonderland_mod_id:chocolate_item"
+}

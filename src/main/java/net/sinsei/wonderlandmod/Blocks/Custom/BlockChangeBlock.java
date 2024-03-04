@@ -6,12 +6,19 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
+import net.sinsei.wonderlandmod.util.ModTags;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class BlockChangeBlock extends Block
 {
@@ -34,7 +41,7 @@ public class BlockChangeBlock extends Block
                             if ((Math.abs(x * x) + Math.abs(y * y) + Math.abs(z * z)) <= (RADIUS * RADIUS) + RADIUS) {
                                 BlockPos pos = pPos.offset(x, y, z);
                                 BlockState state = pLevel.getBlockState(pos);
-                                if (isGrassBlock(state)) {
+                                if (isPossibleBlock(state)) {
                                     outputDirtVariables(pos, player, state.getBlock());
                                     pLevel.setBlock(pos, ModBlocks.CHOCOLATE_BLOCK.get().defaultBlockState(), 3);
                                 }
@@ -54,9 +61,9 @@ public class BlockChangeBlock extends Block
                 "(" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
     }
 
-    private Boolean isGrassBlock(BlockState state)
+    private Boolean isPossibleBlock(BlockState state)
     {
-        return state.is(Blocks.GRASS_BLOCK);
+        return state.is(ModTags.Blocks.BLOCK_CHANGE_ITEM_POSS);
     }
 }
 

@@ -1,8 +1,11 @@
 {
   "item.wonderland_mod_id.block_change_item": "Block-Changer Item",
+  "tooltip.wonderland_mod_id.block_change_item.tooltip": "This item changes dirt blocks in a radius to chocolate blocks!",
+
   "item.wonderland_mod_id.cake_seeds_item": "Cake Seeds",
   "item.wonderland_mod_id.chocolate_item": "Chocolate",
   "item.wonderland_mod_id.lolly_item": "Lollypop",
+  "item.wonderland_mod_id.burn_item": "Burner",
 
 
 

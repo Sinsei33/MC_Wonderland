@@ -6,12 +6,19 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
+import net.sinsei.wonderlandmod.util.ModTags;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class BlockChangeItem extends Item
 {
@@ -38,7 +45,7 @@ public class BlockChangeItem extends Item
                             if ((Math.abs(x * x) + Math.abs(y * y) + Math.abs(z * z)) <= (RADIUS * RADIUS) + RADIUS) {
                                 BlockPos pos = positionClicked.offset(x, y, z);
                                 BlockState state = pContext.getLevel().getBlockState(pos);
-                                if (isGrassBlock(state)) {
+                                if (isPossibleBlock(state)) {
                                     outputDirtVariables(pos, player, state.getBlock());
                                     world.setBlock(pos, ModBlocks.CHOCOLATE_BLOCK.get().defaultBlockState(), 3);
 
@@ -64,8 +71,16 @@ public class BlockChangeItem extends Item
                 "(" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
     }
 
-    private Boolean isGrassBlock(BlockState state)
+    private Boolean isPossibleBlock(BlockState state)
     {
-        return state.is(Blocks.GRASS_BLOCK);
+        return state.is(ModTags.Blocks.BLOCK_CHANGE_ITEM_POSS);
     }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced)
+    {
+        pTooltipComponents.add(Component.translatable("tooltip.wonderland_mod_id.block_change_item.tooltip"));
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    }
+
 }

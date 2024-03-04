@@ -1,0 +1,4 @@
+// 1.20.1	2024-03-04T16:07:49.143483	Tags for minecraft:block mod id wonderland_mod_id
+258f058786c1654105e1ebbff4c9fdb4d28cdc0c data/minecraft/tags/blocks/mineable/shovel.json
+258f058786c1654105e1ebbff4c9fdb4d28cdc0c data/minecraft/tags/blocks/needs_iron_tool.json
+92861bbfc33718f65a6c66f4468675fa09ac162f data/wonderland_mod_id/tags/blocks/block_change_item_poss.json

@@ -24,6 +24,7 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.CAKE_SEEDS_ITEM.get());
                         pOutput.accept(ModItems.CHOCOLATE_ITEM.get());
                         pOutput.accept(ModItems.LOLLY_ITEM.get());
+                        pOutput.accept(ModItems.BURN_ITEM.get());
 
                         pOutput.accept(ModBlocks.BLOCK_CHANGE_BLOCK.get());
                         pOutput.accept(ModBlocks.CAKE_CROP_BLOCK.get());

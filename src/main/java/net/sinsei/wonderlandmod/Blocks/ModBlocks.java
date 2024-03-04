@@ -2,7 +2,6 @@ package net.sinsei.wonderlandmod.Blocks;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -31,17 +30,16 @@ public class ModBlocks
     public static final RegistryObject<Block> ATTACHED_CAKE_CROP_STEM = registerBlock("attached_cake_crop_stem",
             () -> new AttachedStemBlock((StemGrownBlock) CAKE_CROP_BLOCK.get(),
                     ModItems.CAKE_SEEDS_ITEM,
-                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY)));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY).noLootTable()));
     public static final RegistryObject<Block> CAKE_CROP_STEM = registerBlock("cake_crop_stem",
             () -> new StemBlock((StemGrownBlock) CAKE_CROP_BLOCK.get(),
                     ModItems.CAKE_SEEDS_ITEM,
-                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP).pushReaction(PushReaction.DESTROY)));
+                    BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP).pushReaction(PushReaction.DESTROY).noLootTable()));
 
 
     public static final RegistryObject<Block> CHOCOLATE_BLOCK = registerBlock("chocolate_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
                     .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
-
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

@@ -1,5 +1,6 @@
 {
   "parent": "wonderland_mod_id:block/cake_crop_stem_growth0",
+  "render_type": "minecraft:cutout",
   "textures": {
     "stem": "wonderland_mod_id:block/cake_crop_stem"
   }

@@ -9,6 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 import net.sinsei.wonderlandmod.WonderlandMod;
 import net.sinsei.wonderlandmod.item.Custom.BlockChangeItem;
+import net.sinsei.wonderlandmod.item.Custom.FuelItem;
 
 public class ModItems
 {
@@ -21,6 +22,10 @@ public class ModItems
 
     public static final RegistryObject<Item> CHOCOLATE_ITEM = ITEMS.register("chocolate_item", () -> new Item(new Item.Properties().food(ModFoods.CHOCOLATE_ITEM)));
     public static final RegistryObject<Item> LOLLY_ITEM = ITEMS.register("lolly_item", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BURN_ITEM = ITEMS.register("burn_item", () -> new FuelItem(new Item.Properties(), 400));
+
+
 
     public static void register(IEventBus eventBus)
     {
