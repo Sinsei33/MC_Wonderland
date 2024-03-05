@@ -12,7 +12,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.Blocks.Custom.BlockChangeBlock;
 import net.sinsei.wonderlandmod.Blocks.Custom.CakeCropBlock;
+import net.sinsei.wonderlandmod.Blocks.Custom.HoneyFluidBlock;
 import net.sinsei.wonderlandmod.WonderlandMod;
+import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -36,6 +38,17 @@ public class ModBlocks
                     ModItems.CAKE_SEEDS_ITEM,
                     BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP).pushReaction(PushReaction.DESTROY).noLootTable()));
 
+    public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> HONEY_BLOCK = BLOCKS.register("honey_block",
+            () -> new LiquidBlock(ModFluids.HONEY_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+//    public static final RegistryObject<LiquidBlock> HONEY = registerBlock("honey",
+//            () -> new HoneyFluidBlock(
+//                    ModFluids.HONEY,
+//                    Block.Properties.of().noCollission().strength(100.0F).noLootTable().mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().replaceable().liquid().noLootTable().speedFactor(0.3F).jumpFactor(0.3F).friction(1.0f)
+//            ));
 
     public static final RegistryObject<Block> CHOCOLATE_BLOCK = registerBlock("chocolate_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)

@@ -1,13 +1,16 @@
 package net.sinsei.wonderlandmod.item;
 
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 import net.sinsei.wonderlandmod.WonderlandMod;
+import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.item.Custom.BlockChangeItem;
 import net.sinsei.wonderlandmod.item.Custom.FuelItem;
 
@@ -24,6 +27,11 @@ public class ModItems
     public static final RegistryObject<Item> LOLLY_ITEM = ITEMS.register("lolly_item", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> BURN_ITEM = ITEMS.register("burn_item", () -> new FuelItem(new Item.Properties(), 400));
+
+    //public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket", () -> new BucketItem(ModFluids.HONEY, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket", () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket_bucket", () -> new BucketItem(ModFluids.HONEY_FLUID_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
 

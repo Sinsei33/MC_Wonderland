@@ -1,9 +1,11 @@
 package net.sinsei.wonderlandmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.model.renderable.ITextureRenderTypeLookup;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -16,6 +18,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
+import net.sinsei.wonderlandmod.fluid.ModFluidTypes;
+import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.item.ModCreativeModTabs;
 import net.sinsei.wonderlandmod.item.ModItems;
 import org.slf4j.Logger;
@@ -29,6 +33,7 @@ public class WonderlandMod
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+
     public WonderlandMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -36,6 +41,8 @@ public class WonderlandMod
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -48,6 +55,8 @@ public class WonderlandMod
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ForgeMod.enableMilkFluid();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -64,10 +73,14 @@ public class WonderlandMod
             event.accept(ModItems.CHOCOLATE_ITEM);
             event.accept(ModItems.LOLLY_ITEM);
             event.accept(ModItems.BURN_ITEM);
+            event.accept(ModItems.SOAP_WATER_BUCKET);
+            event.accept(ModItems.HONEY_BUCKET);
 
             event.accept(ModBlocks.BLOCK_CHANGE_BLOCK);
             event.accept(ModBlocks.CAKE_CROP_BLOCK);
             event.accept(ModBlocks.CHOCOLATE_BLOCK);
+            //event.accept(ModBlocks.SOAP_WATER_BLOCK);
+
         }
     }
 
@@ -84,6 +97,8 @@ public class WonderlandMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
         }
     }
 }

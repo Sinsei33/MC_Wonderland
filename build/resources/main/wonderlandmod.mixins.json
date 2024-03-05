@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "priority": 1100,
+  "package": "net.sinsei.wonderlandmod.util.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "wonderlandmod.refmap.json",
+  "mixins": [
+
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
