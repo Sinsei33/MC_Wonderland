@@ -34,6 +34,7 @@ public class ModTags
     public static class Fluids
     {
         public static final TagKey<Fluid> HONEY_TAG = FluidTags.create(new ResourceLocation("forge", "honey"));
+        public static final TagKey<Fluid> SWEETS_TAG = FluidTags.create(new ResourceLocation("forge", "sweets"));
 
         private static TagKey<Fluid> tag(String name)
         {

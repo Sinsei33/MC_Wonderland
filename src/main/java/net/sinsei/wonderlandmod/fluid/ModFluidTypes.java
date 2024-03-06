@@ -2,7 +2,6 @@ package net.sinsei.wonderlandmod.fluid;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.SoundAction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.WonderlandMod;
 import net.sinsei.wonderlandmod.fluid.Custom.HoneyFluid;
+import net.sinsei.wonderlandmod.fluid.Custom.LiquidStarlight;
 
 public class ModFluidTypes
 {
@@ -26,8 +26,14 @@ public class ModFluidTypes
                     new Vec3(224f / 225f, 56f / 255f, 208f / 255f),
                     FluidType.Properties.create().lightLevel(15).density(15).viscosity(5).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
 
+
+
     public static final RegistryObject<FluidType> HONEY_FLUID_TYPE = register("honey_fluid",
-            HoneyFluid.BASE_FLUID_TYPE);
+            HoneyFluid.GETFLUIDTYPE());
+
+    public static final RegistryObject<FluidType> LIQUID_STARLIGHT_FLUID_TYPE = register("liquid_starlight_fluid",
+            LiquidStarlight.GETFLUIDTYPE());
+
 
 
 
@@ -35,9 +41,7 @@ public class ModFluidTypes
     private static RegistryObject<FluidType> register(String name,
                                                       BaseFluidType type)
     {
-        return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, SOAP_OVERLAY_RL, 0xA1E038D0,
-                new Vec3(224f / 225f, 56f / 255f, 208f / 255f),
-                FluidType.Properties.create().lightLevel(15).density(15).viscosity(5).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)));
+        return FLUID_TYPES.register(name, () -> type);
     }
 
     public static void register(IEventBus eventBus)

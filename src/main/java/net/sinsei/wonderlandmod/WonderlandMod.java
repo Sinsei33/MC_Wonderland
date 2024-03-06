@@ -75,6 +75,7 @@ public class WonderlandMod
             event.accept(ModItems.BURN_ITEM);
             event.accept(ModItems.SOAP_WATER_BUCKET);
             event.accept(ModItems.HONEY_BUCKET);
+            event.accept(ModItems.LIQUID_STARLIGHT_BUCKET);
 
             event.accept(ModBlocks.BLOCK_CHANGE_BLOCK);
             event.accept(ModBlocks.CAKE_CROP_BLOCK);

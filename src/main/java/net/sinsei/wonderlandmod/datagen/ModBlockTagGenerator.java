@@ -11,6 +11,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 import net.sinsei.wonderlandmod.WonderlandMod;
+import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 

@@ -32,25 +32,28 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
     public static final ResourceLocation FLOWING = new ResourceLocation(WonderlandMod.MOD_ID, "block/honey/flow");
     public static final ResourceLocation OVERLAY = new ResourceLocation(WonderlandMod.MOD_ID, "block/honey/overlay");
 
-    public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
-    public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
-    public static final ResourceLocation SOAP_OVERLAY_RL = new ResourceLocation(WonderlandMod.MOD_ID, "misc/in_soap_water");
 
-    public HoneyFluid() {
-        super(new Properties(
+    public static BaseFluidType GETFLUIDTYPE()
+    {
+        return new BaseFluidType(STILL, FLOWING, OVERLAY, 0xA1E68E00,
+                new Vec3(230f / 225f, 142f / 255f, 0f / 255f),
+                FluidType.Properties.create().lightLevel(2).density(15).viscosity(5).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK));
+    }
+
+    public static ForgeFlowingFluid.Properties GETPROPERTIES ()
+    {
+        return new ForgeFlowingFluid.Properties(
                 ModFluidTypes.HONEY_FLUID_TYPE,
                 ModFluids.HONEY_FLUID_SOURCE,
                 ModFluids.HONEY_FLUID_FLOW
-        ).bucket(ModItems.HONEY_BUCKET).block(ModBlocks.HONEY_BLOCK));
+                ).bucket(ModItems.HONEY_BUCKET).block(ModBlocks.HONEY_BLOCK);
     }
 
-    public static BaseFluidType BASE_FLUID_TYPE = new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, SOAP_OVERLAY_RL, 0xA1E038D0,
-        new Vec3(224f / 225f, 56f / 255f, 208f / 255f),
-                    FluidType.Properties.create().lightLevel(15).density(15).viscosity(5).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK));
+    public HoneyFluid() {
+        super(GETPROPERTIES());
+    }
 
-    public static final ForgeFlowingFluid.Properties HONEY_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
-            ModFluidTypes.HONEY_FLUID_TYPE, ModFluids.HONEY_FLUID_SOURCE, ModFluids.HONEY_FLUID_FLOW)
-            .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.HONEY_BLOCK).bucket(ModItems.HONEY_BUCKET);
+
 
     @Override
     public Fluid getFlowing() {
@@ -64,52 +67,52 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
 
     @Override
     public void animateTick(Level worldIn, BlockPos pos, FluidState state, RandomSource random) {
-//        BlockPos blockpos = pos.above();
-//        if (random.nextInt(100) == 0 && !worldIn.getBlockState(blockpos).getFluidState().equals(state)) {
-//            worldIn.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.HONEY_BLOCK_SLIDE, SoundSource.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F, false);
-//        }
+        BlockPos blockpos = pos.above();
+        if (random.nextInt(100) == 0 && !worldIn.getBlockState(blockpos).getFluidState().equals(state)) {
+            worldIn.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.HONEY_BLOCK_SLIDE, SoundSource.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F, false);
+        }
     }
 
-//    @Nullable
-//    @Override
-//    public ParticleOptions getDripParticle() {
-//        return ParticleTypes.DRIPPING_HONEY;
-//    }
-//
-//    @Override
-//    public int getSlopeFindDistance(LevelReader worldIn) {
-//        return worldIn.dimensionType().ultraWarm() ? 6 : 3;
-//    }
-//
-//    @Override
-//    public boolean isSame(Fluid fluidIn) {
-//        return fluidIn.is(ModTags.Fluids.HONEY_TAG);
-//    }
-//
-//    @Override
-//    public int getDropOff(LevelReader worldIn) {
-//        return worldIn.dimensionType().ultraWarm() ? 1 : 2;
-//    }
-//
-//    @Override
-//    public int getTickDelay(LevelReader worldIn) {
-//        return worldIn.dimensionType().ultraWarm() ? 10 : 30;
-//    }
-//
-//    @Override
-//    public int getSpreadDelay(Level world, BlockPos pos, FluidState state, FluidState FluidState) {
-//        int i = this.getTickDelay(world);
-//        if (!state.isEmpty() && !FluidState.isEmpty() && !state.getValue(FALLING) && !FluidState.getValue(FALLING) && FluidState.getHeight(world, pos) > state.getHeight(world, pos) && world.getRandom().nextInt(4) != 0) {
-//            i *= 4;
-//        }
-//
-//        return i;
-//    }
-//
-//    @Override
-//    protected float getExplosionResistance() {
-//        return 100.0F;
-//    }
+    @Nullable
+    @Override
+    public ParticleOptions getDripParticle() {
+        return ParticleTypes.DRIPPING_HONEY;
+    }
+
+    @Override
+    public int getSlopeFindDistance(LevelReader worldIn) {
+        return worldIn.dimensionType().ultraWarm() ? 6 : 3;
+    }
+
+    @Override
+    public boolean isSame(Fluid fluidIn) {
+        return fluidIn.is(ModTags.Fluids.HONEY_TAG);
+    }
+
+    @Override
+    public int getDropOff(LevelReader worldIn) {
+        return worldIn.dimensionType().ultraWarm() ? 1 : 2;
+    }
+
+    @Override
+    public int getTickDelay(LevelReader worldIn) {
+        return worldIn.dimensionType().ultraWarm() ? 10 : 30;
+    }
+
+    @Override
+    public int getSpreadDelay(Level world, BlockPos pos, FluidState state, FluidState FluidState) {
+        int i = this.getTickDelay(world);
+        if (!state.isEmpty() && !FluidState.isEmpty() && !state.getValue(FALLING) && !FluidState.getValue(FALLING) && FluidState.getHeight(world, pos) > state.getHeight(world, pos) && world.getRandom().nextInt(4) != 0) {
+            i *= 4;
+        }
+
+        return i;
+    }
+
+    @Override
+    protected float getExplosionResistance() {
+        return 100.0F;
+    }
 
 //    public boolean shouldFreeze(LevelReader pLevel, Biome biome, BlockPos pos) {
 //        if (!biome.warmEnoughToRain(pos)) {

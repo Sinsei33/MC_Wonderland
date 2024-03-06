@@ -39,16 +39,13 @@ public class ModBlocks
                     BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP).pushReaction(PushReaction.DESTROY).noLootTable()));
 
     public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
-            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER)));
+            () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
     public static final RegistryObject<LiquidBlock> HONEY_BLOCK = BLOCKS.register("honey_block",
-            () -> new LiquidBlock(ModFluids.HONEY_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER)));
+            () -> new LiquidBlock(ModFluids.HONEY_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
-//    public static final RegistryObject<LiquidBlock> HONEY = registerBlock("honey",
-//            () -> new HoneyFluidBlock(
-//                    ModFluids.HONEY,
-//                    Block.Properties.of().noCollission().strength(100.0F).noLootTable().mapColor(MapColor.TERRACOTTA_ORANGE).noCollission().replaceable().liquid().noLootTable().speedFactor(0.3F).jumpFactor(0.3F).friction(1.0f)
-//            ));
+    public static final RegistryObject<LiquidBlock> LIQUID_STARLIGHT_BLOCK = BLOCKS.register("liquid_starlight_block",
+            () -> new LiquidBlock(ModFluids.LIQUID_STARLIGHT_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
     public static final RegistryObject<Block> CHOCOLATE_BLOCK = registerBlock("chocolate_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
