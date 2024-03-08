@@ -34,6 +34,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider
                 .add(ModBlocks.CHOCOLATE_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(ModBlocks.CHOCOLATE_BLOCK.get());
+                .add(ModBlocks.CHOCOLATE_BLOCK.get())
+                .add(ModBlocks.SWEET_GRASS_BLOCK.get())
+                .add(ModBlocks.SWEET_DIRT_BLOCK.get());
     }
 }

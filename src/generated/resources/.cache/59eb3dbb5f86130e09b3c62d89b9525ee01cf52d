@@ -1,4 +1,6 @@
-// 1.20.1	2024-03-04T16:07:49.1404909	Loot Tables
+// 1.20.1	2024-03-07T14:32:48.6816109	Loot Tables
 22abe38b9bd55c86b729bbbd2ab2ee055fbd5cdc data/wonderland_mod_id/loot_tables/blocks/block_change_block.json
 0147dee21a2abfbc443296333fbe944fe26edfe8 data/wonderland_mod_id/loot_tables/blocks/cake_crop_block.json
 8337335bd953d17394d8768b0f63a99b08739a8e data/wonderland_mod_id/loot_tables/blocks/chocolate_block.json
+590ab772f7a1902b921c0dddc2ecf2fa6216e7ff data/wonderland_mod_id/loot_tables/blocks/sweet_dirt_block.json
+899d479a265611426715932fb02cd0d5b2a0c69d data/wonderland_mod_id/loot_tables/blocks/sweet_grass_block.json

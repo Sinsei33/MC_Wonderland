@@ -6,10 +6,12 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.sinsei.wonderlandmod.item.ModItems;
 
 import java.util.function.Supplier;
 
@@ -26,6 +28,9 @@ public class HoneyFluidBlock extends LiquidBlock
         if (entity instanceof Player player)
         {
             player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 80, 0, false, true));
+            player.heal(1);
+            // Todo Custom Food for this
+            player.eat(world, new ItemStack(ModItems.CHOCOLATE_ITEM.get()));
         }
 
         super.entityInside(state, world, position, entity);

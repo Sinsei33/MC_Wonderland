@@ -35,8 +35,8 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
 
     public static BaseFluidType GETFLUIDTYPE()
     {
-        return new BaseFluidType(STILL, FLOWING, OVERLAY, 0xA1E68E00,
-                new Vec3(230f / 225f, 142f / 255f, 0f / 255f),
+        return new BaseFluidType(STILL, FLOWING, OVERLAY, 0xA1f5f0c9,
+                new Vec3(245f / 255f, 240f / 255f, 201f / 255f),
                 FluidType.Properties.create().lightLevel(2).density(15).viscosity(5).sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK));
     }
 
@@ -86,7 +86,7 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
 
     @Override
     public boolean isSame(Fluid fluidIn) {
-        return fluidIn.is(ModTags.Fluids.HONEY_TAG);
+        return fluidIn.is(ModTags.Fluids.HONEY_FLUID_TAG);
     }
 
     @Override

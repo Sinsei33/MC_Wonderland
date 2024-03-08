@@ -1,26 +1,19 @@
 package net.sinsei.wonderlandmod.fluid;
 
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
 import net.sinsei.wonderlandmod.WonderlandMod;
 import net.sinsei.wonderlandmod.fluid.Custom.HoneyFluid;
-import net.sinsei.wonderlandmod.fluid.Custom.LiquidStarlight;
+import net.sinsei.wonderlandmod.fluid.Custom.LiquidSugar;
 import net.sinsei.wonderlandmod.item.ModItems;
 
-import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class ModFluids
@@ -41,8 +34,8 @@ public class ModFluids
     public static final RegistryObject<ForgeFlowingFluid> HONEY_FLUID_SOURCE = register("honey_fluid_source", HoneyFluid.Source::new);
     public static final RegistryObject<ForgeFlowingFluid> HONEY_FLUID_FLOW = register("honey_fluid_flow", HoneyFluid.Flowing::new);
 
-    public static final RegistryObject<ForgeFlowingFluid> LIQUID_STARLIGHT_FLUID_SOURCE = register("liquid_starlight_fluid_source", LiquidStarlight.Source::new);
-    public static final RegistryObject<ForgeFlowingFluid> LIQUID_STARLIGHT_FLUID_FLOW = register("liquid_starlight_fluid_flow", LiquidStarlight.Flowing::new);
+    public static final RegistryObject<ForgeFlowingFluid> LIQUID_SUGAR_FLUID_SOURCE = register("liquid_sugar_fluid_source", LiquidSugar.Source::new);
+    public static final RegistryObject<ForgeFlowingFluid> LIQUID_SUGAR_FLUID_FLOW = register("liquid_sugar_fluid_flow", LiquidSugar.Flowing::new);
 
 
 

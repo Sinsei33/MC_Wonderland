@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sinsei.wonderlandmod.WonderlandMod;
 import net.sinsei.wonderlandmod.fluid.Custom.HoneyFluid;
-import net.sinsei.wonderlandmod.fluid.Custom.LiquidStarlight;
+import net.sinsei.wonderlandmod.fluid.Custom.LiquidSugar;
 
 public class ModFluidTypes
 {
@@ -31,8 +31,8 @@ public class ModFluidTypes
     public static final RegistryObject<FluidType> HONEY_FLUID_TYPE = register("honey_fluid",
             HoneyFluid.GETFLUIDTYPE());
 
-    public static final RegistryObject<FluidType> LIQUID_STARLIGHT_FLUID_TYPE = register("liquid_starlight_fluid",
-            LiquidStarlight.GETFLUIDTYPE());
+    public static final RegistryObject<FluidType> LIQUID_SUGAR_FLUID_TYPE = register("liquid_sugar_fluid",
+            LiquidSugar.GETFLUIDTYPE());
 
 
 

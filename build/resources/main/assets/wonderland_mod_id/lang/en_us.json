@@ -6,9 +6,9 @@
   "item.wonderland_mod_id.chocolate_item": "Chocolate",
   "item.wonderland_mod_id.lolly_item": "Lollypop",
   "item.wonderland_mod_id.burn_item": "Burner",
-  "item.wonderland_mod_id.soap_water_bucket": "Bucket full of soap",
-  "item.wonderland_mod_id.honey_bucket": "Bucket full of honey",
-  "item.wonderland_mod_id.liquid_starlight_bucket": "Bucket full of starlight",
+  "item.wonderland_mod_id.soap_water_bucket": "Bucket of soap",
+  "item.wonderland_mod_id.honey_bucket": "Bucket of honey",
+  "item.wonderland_mod_id.liquid_sugar_bucket": "Bucket of liquid sugar",
 
 
 
@@ -17,6 +17,9 @@
   "block.wonderland_mod_id.cake_crop_block": "Cake",
   "block.wonderland_mod_id.cake_crop_stem": "Cake Stem",
   "block.wonderland_mod_id.chocolate_block": "Chocolate Block",
+  "block.wonderland_mod_id.sweet_dirt_block": "Block of sweet dirt",
+  "block.wonderland_mod_id.sweet_grass_block": "Block of sweet grass",
+  "block.wonderland_mod_id.sweet_farm_block": "Block of sweet tilled dirt",
 
   "creativetab.wonderland_tab": "Wonderland"
 }

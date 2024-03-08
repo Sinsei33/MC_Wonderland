@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:item/generated",
-    "textures": {
-        "layer0": "wonderland_mod_id:item/liquid_starlight_bucket"
-    }
-}

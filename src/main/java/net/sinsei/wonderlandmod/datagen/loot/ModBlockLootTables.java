@@ -34,9 +34,14 @@ public class ModBlockLootTables extends BlockLootSubProvider
     {
         this.dropSelf(ModBlocks.BLOCK_CHANGE_BLOCK.get());
         this.dropSelf(ModBlocks.CAKE_CROP_BLOCK.get());
+        this.dropSelf(ModBlocks.SWEET_DIRT_BLOCK.get());
+
+        // Todo Silk Touch
+        this.dropOther(ModBlocks.SWEET_GRASS_BLOCK.get(), ModBlocks.SWEET_DIRT_BLOCK.get());
 
         this.add(ModBlocks.CHOCOLATE_BLOCK.get(),
                 block -> createMultipleDrops(ModBlocks.CHOCOLATE_BLOCK.get(), ModItems.CHOCOLATE_ITEM.get(), 1, 3));
+
     }
 
     @Override

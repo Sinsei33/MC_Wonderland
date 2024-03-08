@@ -30,7 +30,7 @@ public class ModItems
 
     public static final RegistryObject<Item> SOAP_WATER_BUCKET = ITEMS.register("soap_water_bucket", () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> HONEY_BUCKET = ITEMS.register("honey_bucket", () -> new BucketItem(ModFluids.HONEY_FLUID_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-    public static final RegistryObject<Item> LIQUID_STARLIGHT_BUCKET = ITEMS.register("liquid_starlight_bucket", () -> new BucketItem(ModFluids.LIQUID_STARLIGHT_FLUID_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> LIQUID_SUGAR_BUCKET = ITEMS.register("liquid_sugar_bucket", () -> new BucketItem(ModFluids.LIQUID_SUGAR_FLUID_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
 

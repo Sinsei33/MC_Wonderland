@@ -1,5 +1,7 @@
 {
   "values": [
-    "wonderland_mod_id:chocolate_block"
+    "wonderland_mod_id:chocolate_block",
+    "wonderland_mod_id:sweet_grass_block",
+    "wonderland_mod_id:sweet_dirt_block"
   ]
 }

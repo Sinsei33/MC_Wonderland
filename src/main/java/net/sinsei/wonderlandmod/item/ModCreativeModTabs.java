@@ -27,11 +27,14 @@ public class ModCreativeModTabs
                         pOutput.accept(ModItems.BURN_ITEM.get());
                         pOutput.accept(ModItems.SOAP_WATER_BUCKET.get());
                         pOutput.accept(ModItems.HONEY_BUCKET.get());
-                        pOutput.accept(ModItems.LIQUID_STARLIGHT_BUCKET.get());
+                        pOutput.accept(ModItems.LIQUID_SUGAR_BUCKET.get());
 
                         pOutput.accept(ModBlocks.BLOCK_CHANGE_BLOCK.get());
                         pOutput.accept(ModBlocks.CAKE_CROP_BLOCK.get());
                         pOutput.accept(ModBlocks.CHOCOLATE_BLOCK.get());
+                        pOutput.accept(ModBlocks.SWEET_DIRT_BLOCK.get());
+                        pOutput.accept(ModBlocks.SWEET_GRASS_BLOCK.get());
+                        pOutput.accept(ModBlocks.SWEET_FARM_BLOCK.get());
                         //pOutput.accept(ModBlocks.SOAP_WATER_BLOCK.get());
                     })
                     .build());
