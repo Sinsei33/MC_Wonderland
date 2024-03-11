@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "wonderland_mod_id:block/biscuit_block"
+  }
+}

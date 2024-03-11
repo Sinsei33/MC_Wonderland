@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LightEngine;
 import net.sinsei.wonderlandmod.Blocks.ModBlocks;
+import net.sinsei.wonderlandmod.util.DevUtil;
 
 public abstract class SpreadingSweetGrassBlock extends Block
 {
@@ -46,7 +47,8 @@ public abstract class SpreadingSweetGrassBlock extends Block
      * Performs a random tick on a block.
      */
     @Override
-    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
+    {
         if (!canBeSweetGrass(pState, pLevel, pPos)) {
             if (!pLevel.isAreaLoaded(pPos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
             pLevel.setBlockAndUpdate(pPos, ModBlocks.SWEET_DIRT_BLOCK.get().defaultBlockState());

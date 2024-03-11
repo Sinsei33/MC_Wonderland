@@ -1,6 +1,8 @@
 package net.sinsei.wonderlandmod.Blocks.Custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -12,6 +14,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.sinsei.wonderlandmod.item.ModItems;
+import net.sinsei.wonderlandmod.util.DevUtil;
 
 import java.util.function.Supplier;
 
@@ -34,5 +37,11 @@ public class HoneyFluidBlock extends LiquidBlock
         }
 
         super.entityInside(state, world, position, entity);
+    }
+
+    @Override
+    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
+    {
+        DevUtil.outputDevMessage("honeyTickBlock0");
     }
 }

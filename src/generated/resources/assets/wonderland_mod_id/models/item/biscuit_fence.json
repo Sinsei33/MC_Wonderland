@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "wonderland_mod_id:block/biscuit_block"
+  }
+}

@@ -31,11 +31,22 @@ public class ModBlockTagGenerator extends BlockTagsProvider
                 .add(Blocks.GRASS_BLOCK);
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.BISCUIT_BLOCK.get())
                 .add(ModBlocks.CHOCOLATE_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.CHOCOLATE_BLOCK.get())
                 .add(ModBlocks.SWEET_GRASS_BLOCK.get())
                 .add(ModBlocks.SWEET_DIRT_BLOCK.get());
+
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.BISCUIT_BLOCK.get());
+
+        this.tag(BlockTags.FENCES)
+                .add(ModBlocks.BISCUIT_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.BISCUIT_FENCE_GATE.get());
+        this.tag(BlockTags.WALLS)
+                .add(ModBlocks.BISCUIT_WALL.get());
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "wonderland_mod_id:block/biscuit_door_bottom",
+    "top": "wonderland_mod_id:block/biscuit_door_top"
+  }
+}

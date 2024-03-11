@@ -1,9 +1,11 @@
 package net.sinsei.wonderlandmod.Blocks;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -49,14 +51,53 @@ public class ModBlocks
             () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
     public static final RegistryObject<LiquidBlock> HONEY_BLOCK = BLOCKS.register("honey_block",
-            () -> new HoneyFluidBlock(ModFluids.HONEY_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
+            () -> new HoneyFluidBlock(ModFluids.HONEY_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).liquid().randomTicks().noLootTable()));
 
     public static final RegistryObject<LiquidBlock> LIQUID_SUGAR_BLOCK = BLOCKS.register("liquid_sugar_block",
-            () -> new LiquidBlock(ModFluids.LIQUID_SUGAR_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
+            () -> new LiquidSugarFluidBlock(ModFluids.LIQUID_SUGAR_FLUID_SOURCE, BlockBehaviour.Properties.copy(Blocks.LAVA).liquid().randomTicks().noLootTable()));
+
+    public static final RegistryObject<Block> BISCUIT_BLOCK = registerBlock("biscuit_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
 
     public static final RegistryObject<Block> CHOCOLATE_BLOCK = registerBlock("chocolate_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
                     .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
+
+
+
+
+    public static final RegistryObject<Block> BISCUIT_STAIRS = registerBlock("biscuit_stairs",
+            () -> new StairBlock(() -> ModBlocks.BISCUIT_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
+    public static final RegistryObject<Block> BISCUIT_SLAB = registerBlock("biscuit_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
+
+    public static final RegistryObject<Block> BISCUIT_BUTTON = registerBlock("biscuit_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F), BlockSetType.OAK, 10, true));
+    public static final RegistryObject<Block> BISCUIT_PRESSURE_PLATE = registerBlock("biscuit_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> BISCUIT_FENCE = registerBlock("biscuit_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
+    public static final RegistryObject<Block> BISCUIT_FENCE_GATE = registerBlock("biscuit_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F), SoundEvents.BAMBOO_WOOD_FENCE_GATE_OPEN, SoundEvents.BAMBOO_WOOD_FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> BISCUIT_WALL = registerBlock("biscuit_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F)));
+
+    public static final RegistryObject<Block> BISCUIT_DOOR = registerBlock("biscuit_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F), BlockSetType.OAK));
+    public static final RegistryObject<Block> BISCUIT_TRAPDOOR = registerBlock("biscuit_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.HONEYCOMB_BLOCK)
+                    .requiresCorrectToolForDrops().strength(1.0F, 2.0F), BlockSetType.OAK));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

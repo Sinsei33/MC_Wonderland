@@ -37,7 +37,6 @@ public class SweetStemBlock extends StemBlock
         return pState.is(ModBlocks.SWEET_FARM_BLOCK.get());
     }
 
-    // TODO
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
     {
@@ -52,7 +51,7 @@ public class SweetStemBlock extends StemBlock
                     Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(pRandom);
                     BlockPos blockpos = pPos.relative(direction);
                     BlockState blockstate = pLevel.getBlockState(blockpos.below());
-                    if (pLevel.isEmptyBlock(blockpos) && (blockstate.canSustainPlant(pLevel, blockpos.below(), Direction.UP, this.fruit) || blockstate.is(Blocks.FARMLAND) || blockstate.is(BlockTags.DIRT))) {
+                    if (pLevel.isEmptyBlock(blockpos) && (blockstate.canSustainPlant(pLevel, blockpos.below(), Direction.UP, this.fruit) || blockstate.is(ModBlocks.SWEET_FARM_BLOCK.get()) || blockstate.is(ModBlocks.SWEET_DIRT_BLOCK.get()))) {
                         pLevel.setBlockAndUpdate(blockpos, this.fruit.defaultBlockState());
                         pLevel.setBlockAndUpdate(pPos, this.fruit.getAttachedStem().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, direction));
                     }
@@ -63,7 +62,7 @@ public class SweetStemBlock extends StemBlock
         }
     }
 
-    protected static float getGrowthSpeede(Block pBlock, BlockGetter pLevel, BlockPos pPos) {
+    protected static float getGrowthSpeed(Block pBlock, BlockGetter pLevel, BlockPos pPos) {
         float f = 1.0F;
         BlockPos blockpos = pPos.below();
 

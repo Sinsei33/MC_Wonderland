@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "wonderland_mod_id:block/biscuit_block"
+  }
+}

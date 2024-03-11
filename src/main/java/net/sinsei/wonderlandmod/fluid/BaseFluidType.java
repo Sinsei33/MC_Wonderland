@@ -24,6 +24,8 @@ public class BaseFluidType extends FluidType
     private final int tintColor;
     private final Vec3 fogColor;
 
+    public boolean isRandomlyTicking = false;
+
     public BaseFluidType(final ResourceLocation stillTexture,
                          final ResourceLocation flowingTexture,
                          final ResourceLocation overlayTexture,

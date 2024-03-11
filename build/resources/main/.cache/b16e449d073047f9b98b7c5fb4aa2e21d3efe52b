@@ -1,4 +1,8 @@
-// 1.20.1	2024-03-07T14:32:48.6865994	Tags for minecraft:block mod id wonderland_mod_id
+// 1.20.1	2024-03-11T15:53:51.6385762	Tags for minecraft:block mod id wonderland_mod_id
+c1bf4c552fea7344f1a234bc3f1483887eff0b4e data/minecraft/tags/blocks/fences.json
+f74b051bf0fcf985e250194441b1e9bef75d71f5 data/minecraft/tags/blocks/fence_gates.json
+c323754258669a577e103332962a173fb3928db5 data/minecraft/tags/blocks/mineable/axe.json
 207d90c88918e28650f1d15752adb0c2fbc4256e data/minecraft/tags/blocks/mineable/shovel.json
-258f058786c1654105e1ebbff4c9fdb4d28cdc0c data/minecraft/tags/blocks/needs_iron_tool.json
+29230144d2a878859a9504292e23c6330d7462f7 data/minecraft/tags/blocks/needs_iron_tool.json
+d7e90222cb536209b79b00a5d78be0f01ed85d7e data/minecraft/tags/blocks/walls.json
 92861bbfc33718f65a6c66f4468675fa09ac162f data/wonderland_mod_id/tags/blocks/block_change_item_poss.json

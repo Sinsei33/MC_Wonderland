@@ -33,11 +33,26 @@ public class ModBlockLootTables extends BlockLootSubProvider
     protected void generate()
     {
         this.dropSelf(ModBlocks.BLOCK_CHANGE_BLOCK.get());
+        this.dropSelf(ModBlocks.BISCUIT_BLOCK.get());
         this.dropSelf(ModBlocks.CAKE_CROP_BLOCK.get());
         this.dropSelf(ModBlocks.SWEET_DIRT_BLOCK.get());
 
+        this.dropSelf(ModBlocks.BISCUIT_STAIRS.get());
+        this.dropSelf(ModBlocks.BISCUIT_BUTTON.get());
+        this.dropSelf(ModBlocks.BISCUIT_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.BISCUIT_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.BISCUIT_FENCE.get());
+        this.dropSelf(ModBlocks.BISCUIT_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.BISCUIT_WALL.get());
+
+        this.add(ModBlocks.BISCUIT_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.BISCUIT_SLAB.get()));
+        this.add(ModBlocks.BISCUIT_DOOR.get(),
+                block -> createDoorTable(ModBlocks.BISCUIT_DOOR.get()));
+
         // Todo Silk Touch
         this.dropOther(ModBlocks.SWEET_GRASS_BLOCK.get(), ModBlocks.SWEET_DIRT_BLOCK.get());
+        this.dropOther(ModBlocks.SWEET_FARM_BLOCK.get(), ModBlocks.SWEET_DIRT_BLOCK.get());
 
         this.add(ModBlocks.CHOCOLATE_BLOCK.get(),
                 block -> createMultipleDrops(ModBlocks.CHOCOLATE_BLOCK.get(), ModItems.CHOCOLATE_ITEM.get(), 1, 3));

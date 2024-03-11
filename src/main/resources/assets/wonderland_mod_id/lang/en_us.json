@@ -21,5 +21,16 @@
   "block.wonderland_mod_id.sweet_grass_block": "Block of sweet grass",
   "block.wonderland_mod_id.sweet_farm_block": "Block of sweet tilled dirt",
 
+  "block.wonderland_mod_id.biscuit_block": "Biscuit Block",
+  "block.wonderland_mod_id.biscuit_stairs": "Biscuit Stairs",
+  "block.wonderland_mod_id.biscuit_slab": "Biscuit Slab",
+  "block.wonderland_mod_id.biscuit_button": "Biscuit Button",
+  "block.wonderland_mod_id.biscuit_pressure_plate": "Biscuit Pressure Plate",
+  "block.wonderland_mod_id.biscuit_fence": "Biscuit Fence",
+  "block.wonderland_mod_id.biscuit_fence_gate": "Biscuit Fence Gate",
+  "block.wonderland_mod_id.biscuit_wall": "Biscuit Wall",
+  "block.wonderland_mod_id.biscuit_door": "Biscuit Door",
+  "block.wonderland_mod_id.biscuit_trapdoor": "Biscuit Trapdoor",
+
   "creativetab.wonderland_tab": "Wonderland"
 }

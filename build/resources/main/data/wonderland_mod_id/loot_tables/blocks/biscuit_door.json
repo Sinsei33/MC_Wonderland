@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "wonderland_mod_id:biscuit_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "wonderland_mod_id:biscuit_door"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "wonderland_mod_id:blocks/biscuit_door"
+}

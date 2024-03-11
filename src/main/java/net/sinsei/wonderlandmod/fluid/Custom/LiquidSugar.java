@@ -1,14 +1,19 @@
 package net.sinsei.wonderlandmod.fluid.Custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -22,12 +27,15 @@ import net.sinsei.wonderlandmod.fluid.BaseFluidType;
 import net.sinsei.wonderlandmod.fluid.ModFluidTypes;
 import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.item.ModItems;
+import net.sinsei.wonderlandmod.util.DevUtil;
 import net.sinsei.wonderlandmod.util.ModTags;
 
 import javax.annotation.Nullable;
 
 public abstract class LiquidSugar extends ForgeFlowingFluid
 {
+    public static final int RADIUS = 1;
+
     public static final ResourceLocation STILL = new ResourceLocation(WonderlandMod.MOD_ID, "block/liquid_sugar/still");
     public static final ResourceLocation FLOWING = new ResourceLocation(WonderlandMod.MOD_ID, "block/liquid_sugar/flow");
     public static final ResourceLocation OVERLAY = new ResourceLocation(WonderlandMod.MOD_ID, "block/liquid_sugar/overlay");
@@ -73,6 +81,13 @@ public abstract class LiquidSugar extends ForgeFlowingFluid
         }
     }
 
+    @Override
+    protected boolean isRandomlyTicking() {
+        return true;
+    }
+
+
+
     @Nullable
     @Override
     public ParticleOptions getDripParticle() {
@@ -96,7 +111,7 @@ public abstract class LiquidSugar extends ForgeFlowingFluid
 
     @Override
     public int getTickDelay(LevelReader worldIn) {
-        return worldIn.dimensionType().ultraWarm() ? 10 : 30;
+        return worldIn.dimensionType().ultraWarm() ? 1 : 3;
     }
 
     @Override
@@ -113,6 +128,8 @@ public abstract class LiquidSugar extends ForgeFlowingFluid
     protected float getExplosionResistance() {
         return 100.0F;
     }
+
+
 
 //    public boolean shouldFreeze(LevelReader pLevel, Biome biome, BlockPos pos) {
 //        if (!biome.warmEnoughToRain(pos)) {
@@ -155,6 +172,32 @@ public abstract class LiquidSugar extends ForgeFlowingFluid
         public boolean isSource(FluidState state) {
             return false;
         }
+
+        @Override
+        public void randomTick(Level pLevel, BlockPos pPos, FluidState pState, RandomSource pRandom)
+        {
+            if (!pLevel.isAreaLoaded(pPos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
+            if (pLevel.getMaxLocalRawBrightness(pPos.above()) >= 9)
+            {
+                for(int i = 0; i < 4; ++i)
+                {
+                    BlockPos blockpos = pPos.offset(pRandom.nextInt(5) - 1, pRandom.nextInt(5) - 3, pRandom.nextInt(5) - 1);
+                    BlockState state = pLevel.getBlockState(blockpos);
+                    changeBlock(pLevel, blockpos, state);
+                }
+            }
+        }
+
+        private void changeBlock(Level pLevel, BlockPos pos, BlockState state)
+        {
+            if(state.is(Blocks.DIRT))
+                pLevel.setBlock(pos, ModBlocks.SWEET_DIRT_BLOCK.get().defaultBlockState(), 3);
+            else if(state.is(Blocks.GRASS_BLOCK))
+                pLevel.setBlock(pos, ModBlocks.SWEET_GRASS_BLOCK.get().defaultBlockState(), 3);
+            else if(state.is(Blocks.FARMLAND))
+                pLevel.setBlock(pos, ModBlocks.SWEET_FARM_BLOCK.get().defaultBlockState(), 3);
+            // TODO PATH
+        }
     }
 
     public static class Source extends LiquidSugar
@@ -171,6 +214,32 @@ public abstract class LiquidSugar extends ForgeFlowingFluid
         @Override
         public boolean isSource(FluidState state) {
             return true;
+        }
+
+        @Override
+        public void randomTick(Level pLevel, BlockPos pPos, FluidState pState, RandomSource pRandom)
+        {
+            if (!pLevel.isAreaLoaded(pPos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
+            if (pLevel.getMaxLocalRawBrightness(pPos.above()) >= 9)
+            {
+                for(int i = 0; i < 4; ++i)
+                {
+                    BlockPos blockpos = pPos.offset(pRandom.nextInt(5) - 1, pRandom.nextInt(5) - 3, pRandom.nextInt(5) - 1);
+                    BlockState state = pLevel.getBlockState(blockpos);
+                    changeBlock(pLevel, blockpos, state);
+                }
+            }
+        }
+
+        private void changeBlock(Level pLevel, BlockPos pos, BlockState state)
+        {
+            if(state.is(Blocks.DIRT))
+                pLevel.setBlock(pos, ModBlocks.SWEET_DIRT_BLOCK.get().defaultBlockState(), 3);
+            else if(state.is(Blocks.GRASS_BLOCK))
+                pLevel.setBlock(pos, ModBlocks.SWEET_GRASS_BLOCK.get().defaultBlockState(), 3);
+            else if(state.is(Blocks.FARMLAND))
+                pLevel.setBlock(pos, ModBlocks.SWEET_FARM_BLOCK.get().defaultBlockState(), 3);
+            // TODO PATH
         }
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "wonderland_mod_id:block/biscuit_block"
+  }
+}

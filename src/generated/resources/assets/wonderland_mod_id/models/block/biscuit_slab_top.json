@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "wonderland_mod_id:block/biscuit_block",
+    "side": "wonderland_mod_id:block/biscuit_block",
+    "top": "wonderland_mod_id:block/biscuit_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "wonderland_mod_id:block/biscuit_block"
+  }
+}

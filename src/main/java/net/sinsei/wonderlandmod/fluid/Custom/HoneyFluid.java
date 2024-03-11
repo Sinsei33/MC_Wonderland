@@ -4,11 +4,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -22,6 +24,7 @@ import net.sinsei.wonderlandmod.fluid.BaseFluidType;
 import net.sinsei.wonderlandmod.fluid.ModFluidTypes;
 import net.sinsei.wonderlandmod.fluid.ModFluids;
 import net.sinsei.wonderlandmod.item.ModItems;
+import net.sinsei.wonderlandmod.util.DevUtil;
 import net.sinsei.wonderlandmod.util.ModTags;
 
 import javax.annotation.Nullable;
@@ -134,6 +137,12 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
 //        return level.getFluidState(pPos).is(ModTags.HONEY);
 //    }
 
+    @Override
+    public void randomTick(Level pLevel, BlockPos pPos, FluidState pState, RandomSource pRandom)
+    {
+        DevUtil.outputDevMessage("honeyTickFluid0");
+    }
+
     public static class Flowing extends HoneyFluid
     {
         public Flowing() {
@@ -155,6 +164,12 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
         public boolean isSource(FluidState state) {
             return false;
         }
+
+        @Override
+        public void randomTick(Level pLevel, BlockPos pPos, FluidState pState, RandomSource pRandom)
+        {
+            DevUtil.outputDevMessage("honeyTickFlowing0");
+        }
     }
 
     public static class Source extends HoneyFluid
@@ -171,6 +186,12 @@ public abstract class HoneyFluid extends ForgeFlowingFluid
         @Override
         public boolean isSource(FluidState state) {
             return true;
+        }
+
+        @Override
+        public void randomTick(Level pLevel, BlockPos pPos, FluidState pState, RandomSource pRandom)
+        {
+            DevUtil.outputDevMessage("honeyTickSource0");
         }
     }
 }

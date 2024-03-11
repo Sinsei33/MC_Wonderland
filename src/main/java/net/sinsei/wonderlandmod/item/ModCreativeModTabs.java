@@ -36,6 +36,17 @@ public class ModCreativeModTabs
                         pOutput.accept(ModBlocks.SWEET_GRASS_BLOCK.get());
                         pOutput.accept(ModBlocks.SWEET_FARM_BLOCK.get());
                         //pOutput.accept(ModBlocks.SOAP_WATER_BLOCK.get());
+
+                        pOutput.accept(ModBlocks.BISCUIT_BLOCK.get());
+                        pOutput.accept(ModBlocks.BISCUIT_DOOR.get());
+                        pOutput.accept(ModBlocks.BISCUIT_TRAPDOOR.get());
+                        pOutput.accept(ModBlocks.BISCUIT_FENCE.get());
+                        pOutput.accept(ModBlocks.BISCUIT_WALL.get());
+                        pOutput.accept(ModBlocks.BISCUIT_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.BISCUIT_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.BISCUIT_BUTTON.get());
+                        pOutput.accept(ModBlocks.BISCUIT_SLAB.get());
+                        pOutput.accept(ModBlocks.BISCUIT_STAIRS.get());
                     })
                     .build());
 
